@@ -1,12 +1,18 @@
-.product-index {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1024px;
-  margin-bottom: 64px;
-}
-
 .product-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 80%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.product-index {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 28%;
 }

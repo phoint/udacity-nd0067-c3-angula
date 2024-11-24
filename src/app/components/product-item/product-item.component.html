@@ -1,1 +1,13 @@
-<p>product-item works!</p>
+<a routerLink="/products/{{product.id}}"> <img src={{product.url}} alt="{{product.name}}"></a>
+<h3>{{product.name}}</h3>
+<p>${{product.price}}</p>
+<app-add-to-cart-form [cartItem] = "cartItem"></app-add-to-cart-form>
+<!-- <form>
+    <input type="hidden" [(ngModel)]="productId" value={{product.id}}>
+    <label>
+        <select [(ngModel)]="product.quantity" [ngModelOptions] = "{standalone: true}" >
+            <option *ngFor = "let n of numSequence(5); let i = index" [value]="i + 1" [selected] = "i + 1 == product.quantity">{{i + 1}}</option>
+        </select>
+    </label>
+    <button type="submit">Add to cart</button>
+</form> -->

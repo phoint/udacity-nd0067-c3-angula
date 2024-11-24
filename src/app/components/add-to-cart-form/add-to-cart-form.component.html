@@ -1,0 +1,9 @@
+<form (ngSubmit)="addToCart()">
+    <input type="hidden" [(ngModel)] = cartItem.productId [ngModelOptions] = "{standalone: true}" value="{{cartItem.productId}}">
+    <label>
+        <select [(ngModel)]="cartItem.quantity" [ngModelOptions] = "{standalone: true}" >
+            <option *ngFor = "let n of numSequence(5); let i = index" [value]="i + 1" [selected] = "i + 1 == cartItem.quantity">{{i + 1}}</option>
+        </select>
+    </label>
+    <button type="submit">Add to cart</button>
+</form>

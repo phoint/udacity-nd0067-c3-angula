@@ -1,1 +1,13 @@
 <p>product-item-detail works!</p>
+<div class="detail-container">
+    <div class="product-image">
+        <img src="{{product.url}}" alt="{{product.name}}" />
+    </div>
+    <div class="detail-item">
+        <h1>{{product.name}}</h1>
+        <p class="price">${{product.price}}</p>
+        <p>{{product.description}}</p>
+        <app-add-to-cart-form [cartItem] = "cartItem"></app-add-to-cart-form>
+        <a routerLink="/" class="back-link">← Back to product list</a>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 img {
   border-radius: 10px;
   width: 320px;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .select-input {
@@ -15,11 +17,73 @@ img {
   margin-top: 64px;
 }
 
+.detail-container p {
+  font-size: 1rem;
+  color: #555;
+}
+
 .detail-item {
   margin-left: 128px;
   margin-right: 128px;
 }
 
+.detail-item h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #333;
+}
+
+.price {
+  font-size: 1.5rem;
+  color: #666;
+  margin: 10px 0;
+}
+
 .back-link {
   margin-top: 8px;
+  display: block;
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #0056b3;
+}
+
+/* Product form */
+.product-form {
+  display: flex;
+  align-items: stretch;
+  margin: 20px 0;
+  gap: 10px;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Dropdown styling */
+.product-form select {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Button styling */
+.btn-add-to-cart {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Button hover state */
+.btn-add-to-cart:hover {
+  background-color: #0056b3;
 }

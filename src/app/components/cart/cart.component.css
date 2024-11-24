@@ -3,10 +3,6 @@ img {
   border-radius: 10px;
 }
 
-.form-margin {
-  margin-bottom: 12px;
-}
-
 .cart-item {
   display: flex;
   flex-direction: row;
@@ -43,3 +39,70 @@ img {
   justify-content: center;
   margin-top: 64px;
 }
+
+.form-margin {
+  margin-bottom: 12px;
+}
+
+
+/* Total amount section */
+.total {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Checkout form styles */
+.checkout-form {
+  width: 40%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form labels and inputs */
+.checkout-form h2 {
+  margin-bottom: 20px;
+}
+
+.checkout-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Small text below form */
+small {
+  display: block;
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Button hover state */
+button[type="submit"]:hover {
+  background-color: #0056b3;
+} 

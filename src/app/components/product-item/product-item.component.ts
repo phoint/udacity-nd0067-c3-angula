@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { ProductInterface } from '../product-list/product-list.component';
+import { CartService } from '../../services/cart.service';
+import { CartItemInterface } from '../cart/cart.component';
 
 @Component({
   selector: 'app-product-item',
@@ -6,5 +9,37 @@ import { Component } from '@angular/core';
   styleUrl: './product-item.component.css'
 })
 export class ProductItemComponent {
+  @Input({}) product: ProductInterface;
+  cartItem: CartItemInterface;
+  cartService = inject(CartService);
+  constructor() {
+    this.product = {
+      id: 0,
+      name: "demo product",
+      price: 9.99,
+      url: "http://localhost:4200/products/0",
+      description: "this is a demo product",
+      quantity: 1
+    }
+
+    this.cartItem = {
+      productId: "0",
+      quantity: 0
+    }
+  }
+
+  ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    this.cartItem = {
+      productId: (this.product.id as unknown) as string,
+      quantity: this.product.quantity || 1
+    }
+  }
+
+  numSequence(n: number): Array<number> { 
+    return Array(n);
+  } 
 
 }
