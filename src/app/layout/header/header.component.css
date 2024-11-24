@@ -5,6 +5,6 @@
   padding: 12px;
 }
 
-a {
-  color: #ffffff;
+.header-link {
+  padding: 0 15px;
 }
