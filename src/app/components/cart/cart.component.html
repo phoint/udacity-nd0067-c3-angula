@@ -24,7 +24,7 @@
             <input type="text" id="address" name="address" placeholder="1234 Main St" required minlength="12" [(ngModel)]="address" #adress="ngModel">
 
             <label for="cc-number">Credit card number</label>
-            <input type="text" id="cc-number" name="cc-number" placeholder="(16-digit number)" required minlength="16" [(ngModel)]="cardNumber" #ccard="ngModel">
+            <input type="text" id="cc-number" name="cc-number" placeholder="(16-digit number)" required minlength="16" pattern="\d{16,16}" [(ngModel)]="cardNumber" #ccard="ngModel">
 
             <small>We'll never share your payment details with anyone else.</small>
 
