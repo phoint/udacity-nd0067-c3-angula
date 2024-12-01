@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { CartItemInterface } from '../cart/cart.component';
 import { ProductInterface } from '../product-list/product-list.component';
 import { CartService } from '../../services/cart.service';
@@ -10,6 +10,8 @@ import { CartService } from '../../services/cart.service';
 })
 export class AddToCartFormComponent {
   @Input() cartItem!: CartItemInterface;
+  @Output() quantityEvent = new EventEmitter<number>();
+
   cartService = inject(CartService);
 
   constructor() {
@@ -18,6 +20,7 @@ export class AddToCartFormComponent {
   addToCart() {
     alert("Add To Cart Successfully!")
     console.log(this.cartItem)
+    this.quantityEvent.emit(this.cartItem.quantity);
     this.cartService.addToCart(this.cartItem)
 
   }

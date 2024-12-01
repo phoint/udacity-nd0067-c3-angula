@@ -17,7 +17,7 @@
         <h2>Checkout</h2>
         <form (ngSubmit) = onSubmit() #form="ngForm">
             <label for="name">Full name</label>
-            <input type="text" id="name" name="name" placeholder="Andy Brinker" required minlength="3" [(ngModel)]="customerName" #name="ngModel">
+            <input type="text" id="name" name="name" placeholder="Andy Brinker" required minlength="3" [(ngModel)]="customerName" #name="ngModel" (ngModelChange)="validateCustomerName($event)">
             
             
             <label for="address">Address</label>
@@ -30,7 +30,7 @@
 
             <button type="submit" [disabled]='form.invalid || amount() == 0'>Submit</button>
         </form>
-        <div *ngIf="name.invalid && name.dirty">
+        <div *ngIf="!isValidName && name.dirty">
               The name must contain at least 3 characters.
         </div>
         <div *ngIf="adress.invalid && adress.dirty">

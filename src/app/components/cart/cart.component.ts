@@ -1,4 +1,4 @@
-import { Component, computed, effect, ElementRef, inject, signal, ViewChildren, viewChildren } from '@angular/core';
+import { Component, computed, effect, ElementRef, inject, OnChanges, signal, ViewChildren, viewChildren } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { ProductListService } from '../../services/product-list.service';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -57,6 +57,13 @@ export class CartComponent {
     console.log(JSON.parse(JSON.stringify({"amount": this.amount()})))
     this.cartService.clearCart();
     this.router.navigate(['/checkout'], {state: JSON.parse(JSON.stringify({"amount": totalAmout, "customerName": this.customerName}))})
+  }
+
+  isValidName: boolean = false;
+  validateCustomerName(arg: string) {
+    if (arg.length >= 3) {
+      this.isValidName = true;
+    }
   }
 
 }

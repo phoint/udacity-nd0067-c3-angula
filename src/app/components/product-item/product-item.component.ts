@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input } from '@angular/core';
 import { ProductInterface } from '../product-list/product-list.component';
 import { CartService } from '../../services/cart.service';
 import { CartItemInterface } from '../cart/cart.component';
@@ -28,7 +28,8 @@ export class ProductItemComponent {
     }
   }
 
-  ngOnInit() {
+  changeQuantity($event: number) {
+    console.log("select %d for product %s", $event, this.product.id)
   }
 
   ngAfterViewInit() {

@@ -1,7 +1,7 @@
 <a routerLink="/products/{{product.id}}"> <img src={{product.url}} alt="{{product.name}}"></a>
 <h3>{{product.name}}</h3>
 <p>${{product.price}}</p>
-<app-add-to-cart-form [cartItem] = "cartItem"></app-add-to-cart-form>
+<app-add-to-cart-form [cartItem] = "cartItem" (quantityEvent) = "changeQuantity($event)"></app-add-to-cart-form>
 <!-- <form>
     <input type="hidden" [(ngModel)]="productId" value={{product.id}}>
     <label>
